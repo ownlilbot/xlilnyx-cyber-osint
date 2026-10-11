@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: xlilnyx-cyber-osint
+    runtime: node
+    plan: free
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /health
+    envVars:
+      - key: NODE_VERSION
+        value: 22
+      - key: ENABLE_OPTIONAL_PROVIDER_APIS
+        value: false
+      - key: RATE_LIMIT_PER_MINUTE
+        value: 60
